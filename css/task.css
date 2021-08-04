@@ -1,0 +1,199 @@
+html {
+  box-sizing: border-box;
+
+  font-family: 'SourceSansPro', 'Helvetica', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 1440px;
+  margin: 0;
+  padding: 32px;
+}
+
+.container {
+  position: relative;
+
+  margin: 0 auto;
+  padding-left: 308px;
+}
+
+.h1 {
+  margin: 0;
+  margin-bottom: 16px;
+
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.5px;
+}
+
+.star {
+  color: red;
+}
+
+.add-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 332px;
+  padding: 27px 24px 24px;
+
+  outline: 1px solid yellow;
+  background-color: #fffefb;
+}
+
+textarea, input {
+  margin: 0;
+  padding: 0;
+}
+
+.form-field_name {
+  display: block;
+
+  width: 100%;
+  margin-bottom: 4px;
+
+  letter-spacing: -0.066em;
+
+  font-size: 11px;
+}
+
+.form-field {
+  display: block;
+
+  width: 100%;
+  margin: 0;
+  margin-bottom: 17px;
+  padding: 10px 15px 11px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  font-size: 12px;
+}
+
+.form-field::placeholder {
+  color: #b4b4b4;
+}
+
+.form-designation {
+  height: 36px;
+}
+
+.form-description {
+  height: 108px;
+
+  resize: none;
+}
+
+.form-price {
+  margin-bottom: 25px;
+}
+
+.add-form_btn {
+  display: block;
+
+  width: 100%;
+  padding: 10px 10px 11px;
+
+  text-align: center;
+
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  background-color: #7bae73;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.add-form_btn:disabled {
+  color: #b4b4b4;
+  background-color: #eee;
+}
+
+.list-products {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  list-style-type: none;
+}
+
+.products-item {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 332px;
+  height: 423px;
+  margin-bottom: 16px;
+
+  border: 1px solid red;
+}
+
+.product-item:nth-child(3n + 2):last-child {
+  margin-right: auto;
+  margin-left: 16px;
+}
+
+.products-item:hover .products-item_delete {
+  visibility: visible;
+}
+
+.products-item_delete {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  visibility: hidden;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 10px;
+  background-color: #ff8484;
+  background-image: url(../delete.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.product {
+  padding-left: 15px;
+}
+
+.product-name {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  color: #3f3f3f;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+}
+
+.product-descr {
+  margin-top: 0;
+  margin-bottom: 32px;
+
+  line-height: 20px;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.product-img {
+  margin-bottom: 16px;
+  margin-left: -16px;
+}
