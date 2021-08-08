@@ -1,76 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preload" href="fonts/SourceSansPro-SemiBold.woff2" as="font">
-  <link rel="preload" href="fonts/SourceSansPro-SemiBold.woff" as="font">
-  <link rel="preload" href="fonts/SourceSansPro-Regular.woff" as="font">
-  <link rel="preload" href="fonts/SourceSansPro-Regular.woff2" as="font">
-  <link rel="stylesheet" href="css/normalized.css">
-  <link rel="stylesheet" type="text/css" href="css/task.css">
-  <link rel="stylesheet" type="text/css" href="css/fonts.css">
-  <title>Document</title>
-</head>
-<body>
-	<header>
-		<h1 class="h1">Добавление товара</h1>
-	</header>
-	<main>
-		<div class="container">
-			<form method="POST" class="add-form">
-        <label for="destignation" class="form-field_name">Наименование товара<span class="star">*</span></label>
-        <input type="text" name="designation" id="destignation" class="form-designation form-field" placeholder="Введите наименование товара">
-        <label for="description" class="form-field_name">Описание товара</label>
-        <textarea name="description" id="description" class="form-description form-field" placeholder="Введите описание товара"></textarea>
-        <label for="url" class="form-field_name">Ссылка на изображение товара<span class="star">*</span></label>
-        <input type="url" name="url" id="url" class="form-designation form-field" placeholder="Введите ссылку">
-        <label for="price" placeholder="Введите цену" class="form-field_name">Цена товара<span class="star">*</span></label>
-        <input type="number" name="price" id="price" min="0" class="form-designation form-field">
-        <button class="add-form_btn"><span class="add-form_button">Добавить товар</span></button>
-			</form>
-			<div class="container-products">
-				<ul class="list-products">
-					<li class="products-item">
-            <button class="products-item_delete"></button>
-            <article class="product">
-              <img src="image.png" alt="Картинка товара" class="product-img">
-              <h2 class="product-name">Наименование товара</h2>
-              <p class="product-descr">Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
-              <div class="product-price"><span class="product-price_value">10 000</span> руб.</div>
-            </article>
-          </li>
-					<li class="products-item">
-            <button class="products-item_delete"></button>
-            <article class="product">
-              <img src="image.png" alt="Картинка товара" class="product-img">
-              <h2 class="product-name">Наименование товара</h2>
-              <p class="product-descr">Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
-              <div class="product-price"><span class="product-price_value">10 000</span> руб.</div>
-            </article>
-          </li>
-          <li class="products-item">
-            <button class="products-item_delete"></button>
-            <article class="product">
-              <img src="image.png" alt="Картинка товара" class="product-img">
-              <h2 class="product-name">Наименование товара</h2>
-              <p class="product-descr">Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
-              <div class="product-price"><span class="product-price_value">10 000</span> руб.</div>
-            </article>
-          </li>
-          <li class="products-item">
-            <button class="products-item_delete"></button>
-            <article class="product">
-              <img src="image.png" alt="Картинка товара" class="product-img">
-              <h2 class="product-name">Наименование товара</h2>
-              <p class="product-descr">Довольно-таки интересное описание товара в несколько строк. Довольно-таки интересное описание товара в несколько строк</p>
-              <div class="product-price"><span class="product-price_value">10 000</span> руб.</div>
-            </article>
-          </li>
-				</ul>
-			</div>
-	</div>
-	</main>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/SourceSansPro-SemiBold.woff2" as="font">
+    <link rel="preload" href="fonts/SourceSansPro-SemiBold.woff" as="font">
+    <link rel="preload" href="fonts/SourceSansPro-Regular.woff" as="font">
+    <link rel="preload" href="fonts/SourceSansPro-Regular.woff2" as="font">
+    <link rel="stylesheet" href="css/normalized.css">
+    <link rel="stylesheet" type="text/css" href="css/task.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="h1">Добавление товара</h1>
+    </header>
+    <main>
+      <div class="container" id="app">
+        <product-card ref="foo" :premium="premium" @product-add="addProduct"></product-card>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
