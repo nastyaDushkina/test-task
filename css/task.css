@@ -133,8 +133,9 @@ textarea, input {
   background-color: #eee;
 }
 
-.add-form_btn:hover {
-  transition: background-color .2s linear;
+.add-form_btn:hover:not(:disabled) {
+  transition: background-color, color .2s linear;
+  color: #fff;
 
   background-color: #568f4e;
 }
@@ -318,4 +319,16 @@ textarea, input {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.modal-enter-active {
+  transition: opacity 1.5s;
+}
+
+.modal-leave-active {
+  transition: opacity .8s;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
 }

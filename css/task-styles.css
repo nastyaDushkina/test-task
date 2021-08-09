@@ -1,0 +1,310 @@
+.add-form {
+  background-color: #fffefb;
+  -webkit-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+}
+
+.modal-mask, .list-products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.add-form .form-price, .add-form .form-description, .add-form .form-designation {
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 17px;
+  padding: 10px 15px 11px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+.add-form .form-price::-webkit-input-placeholder, .add-form .form-description::-webkit-input-placeholder, .add-form .form-designation::-webkit-input-placeholder {
+  color: #b4b4b4;
+}
+.add-form .form-price::-moz-placeholder, .add-form .form-description::-moz-placeholder, .add-form .form-designation::-moz-placeholder {
+  color: #b4b4b4;
+}
+.add-form .form-price:-ms-input-placeholder, .add-form .form-description:-ms-input-placeholder, .add-form .form-designation:-ms-input-placeholder {
+  color: #b4b4b4;
+}
+.add-form .form-price::-ms-input-placeholder, .add-form .form-description::-ms-input-placeholder, .add-form .form-designation::-ms-input-placeholder {
+  color: #b4b4b4;
+}
+.add-form .form-price::placeholder, .add-form .form-description::placeholder, .add-form .form-designation::placeholder {
+  color: #b4b4b4;
+}
+
+.add-form .form-price:required, .add-form .form-designation:required {
+  position: relative;
+}
+.add-form .form-price:required::after, .add-form .form-designation:required::after {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  content: "";
+  border-radius: 4px;
+  background-color: #ff8484;
+}
+
+.modal-mask, .add-form button {
+  color: #fff;
+  border-radius: 10px;
+  background-color: #7bae73;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "SourceSansPro", "Helvetica", sans-serif;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  width: 1440px;
+  margin: 0;
+  padding: 32px;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 308px;
+}
+
+.h1 {
+  margin: 0;
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.5px;
+}
+
+.add-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 332px;
+  padding: 27px 24px 24px;
+}
+.add-form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 4px;
+  letter-spacing: -0.066em;
+  font-size: 11px;
+}
+.add-form .form-designation {
+  height: 36px;
+}
+.add-form .form-description {
+  height: 108px;
+  resize: none;
+}
+.add-form .form-price {
+  margin-bottom: 25px;
+}
+.add-form button {
+  display: block;
+  width: 100%;
+  padding: 10px 10px 11px;
+  -webkit-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
+  text-align: center;
+  border: none;
+  font-size: 12px;
+}
+.add-form button:disabled {
+  color: #b4b4b4;
+  background-color: #eee;
+}
+.add-form button:hover:not(:disabled) {
+  -webkit-transition: background-color, color 0.2s linear;
+  transition: background-color, color 0.2s linear;
+  color: #fff;
+  background-color: #568f4e;
+}
+
+.list-products {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style-type: none;
+}
+.list-products button {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  visibility: hidden;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #ff8484;
+  background-image: url(../delete.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.list-products button:hover {
+  background-color: #f86868;
+}
+.list-products li {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 332px;
+  height: 423px;
+  margin-bottom: 16px;
+  color: #3f3f3f;
+  background-color: #fffefb;
+  -webkit-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+}
+.list-products li:hover {
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear;
+  transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-box-shadow: 0px 22px 30px rgba(0, 0, 0, 0.07), 0px 7px 10px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 22px 30px rgba(0, 0, 0, 0.07), 0px 7px 10px rgba(0, 0, 0, 0.05);
+}
+.list-products li:hover .products-item_delete {
+  visibility: visible;
+}
+.list-products li:nth-child(3n+2):last-child {
+  margin-right: auto;
+  margin-left: 16px;
+}
+.list-products li:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+.list-products li a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.list-products li a:visited {
+  color: inherit;
+}
+.list-products li a img {
+  display: block;
+  min-width: 100%;
+  height: 200px;
+  margin-bottom: 16px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.list-products li .product-inf {
+  padding-left: 15px;
+  font-weight: 600;
+}
+.list-products li .product-inf .product-name {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+}
+.list-products li .product-inf .product-descr {
+  display: block;
+  height: 80px;
+  margin-top: 0;
+  margin-bottom: 32px;
+  line-height: 20px;
+}
+.list-products li .product-inf .product-price {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.app-filter {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 122px;
+  height: 36px;
+  padding: 11px 27px 10px 16px;
+  color: #b4b4b4;
+  border: none;
+  border-radius: 4px;
+  background-color: #fffefb;
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 450px;
+  left: 0;
+  width: 332px;
+  padding: 20px 30px;
+  -webkit-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+          box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+  font-size: 14px;
+  font-weight: 600;
+}
+.modal-mask button {
+  padding: 0;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/*styles for animation of DOM's elements*/
+/* Item of cart */
+.slide-fade-enter-active {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+  -webkit-transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0;
+}
+
+/* Modal Window */
+.modal-enter-active {
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+
+.modal-leave-active {
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
+}
