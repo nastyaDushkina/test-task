@@ -1,3 +1,6 @@
+//import VueTheMask from 'vue-the-mask'
+//Vue.use(VueTheMask)
+
 Vue.component('product-card', {
   props: {
     premium: {
@@ -26,6 +29,7 @@ Vue.component('product-card', {
       <product-form :premium="premium" @add-item="addItem"></product-form>
     </div>
    `,
+
   data() {
     return {
       show: true,
@@ -44,7 +48,6 @@ Vue.component('product-card', {
       for (let i = 0; i < select.length; i++) {
           if (select[i].value === 'no') select[i].selected = true;
       }
-
       this.saveToLocalStorageCart();
     },
     delItem: function(index) {
@@ -64,7 +67,6 @@ Vue.component('product-card', {
     cartLocalStorage() {
       if (localStorage.getItem("products")) {
         let cartLocalStorage = JSON.parse(localStorage.getItem("products"));
-        console.log(cartLocalStorage);
         return cartLocalStorage;
       } else {
         return [];
@@ -154,7 +156,6 @@ Vue.component('product-form', {
 
   methods: {
     onSubmit() {
-
       this.errors = [];
       if(this.name  && this.url && this.price) {
         this.showModal = true;
@@ -174,13 +175,13 @@ Vue.component('product-form', {
         this.descr = null
         this.url = null
         this.price = null
-        setTimeout(function() {
-          let modal = document.getElementById('modal');
-          modal.remove();
-        }, 2000);
+        setTimeout(this.hideModal, 5000);
       }
     },
-  }
+    hideModal() {
+      this.showModal = false;
+    }
+  },
 })
 
 var app = new Vue({
