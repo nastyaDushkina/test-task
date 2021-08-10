@@ -136,7 +136,7 @@ Vue.component('product-form', {
         <label for="url" class="form-field_name field-required">Ссылка на изображение товара</label>
         <input v-model="url" type="url" name="url" id="url" class="form-designation form-field" placeholder="Введите ссылку">
         <label for="price" placeholder="Введите цену" class="form-field_name  field-required">Цена товара</label>
-        <input v-model="price" type="number" name="price" id="price" min="0" class="form-designation form-field">
+        <input v-model="price" type="number" name="price" id="price" min="0" class="form-price form-field" placeholder="Введите цену">
         <button type="submit" class="add-form_btn" disabled :disabled="!(name && url && price) ? true : false"><span class="add-form_button">Добавить товар</span></button>
       </form>
       <modal v-if="showModal" @close="showModal = false"></modal>

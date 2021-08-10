@@ -41,20 +41,6 @@
   color: #b4b4b4;
 }
 
-.add-form .form-price:required, .add-form .form-designation:required {
-  position: relative;
-}
-.add-form .form-price:required::after, .add-form .form-designation:required::after {
-  position: absolute;
-  top: 0;
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  content: "";
-  border-radius: 4px;
-  background-color: #ff8484;
-}
-
 .modal-mask, .add-form button {
   color: #fff;
   border-radius: 10px;
@@ -89,6 +75,7 @@ body {
 .h1 {
   margin: 0;
   margin-bottom: 16px;
+  padding-top: 1px;
   font-size: 28px;
   font-weight: 600;
   line-height: 32.5px;
@@ -99,7 +86,7 @@ body {
   top: 0;
   left: 0;
   width: 332px;
-  padding: 27px 24px 24px;
+  padding: 26px 24px 24px;
 }
 .add-form label {
   display: block;
@@ -107,6 +94,19 @@ body {
   margin-bottom: 4px;
   letter-spacing: -0.066em;
   font-size: 11px;
+}
+.add-form .field-required {
+  position: relative;
+}
+.add-form .field-required::after {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  content: "";
+  border-radius: 4px;
+  background-color: #ff8484;
 }
 .add-form .form-designation {
   height: 36px;
@@ -116,12 +116,13 @@ body {
   resize: none;
 }
 .add-form .form-price {
+  height: 36px;
   margin-bottom: 25px;
 }
 .add-form button {
   display: block;
   width: 100%;
-  padding: 10px 10px 11px;
+  padding: 11px 10px;
   -webkit-transition: background-color 0.4s linear;
   transition: background-color 0.4s linear;
   text-align: center;
@@ -140,6 +141,7 @@ body {
 }
 
 .list-products {
+  margin-top: 0;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -170,7 +172,7 @@ body {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 332px;
-  height: 423px;
+  height: 425px;
   margin-bottom: 16px;
   color: #3f3f3f;
   background-color: #fffefb;
@@ -208,13 +210,13 @@ body {
 .list-products li a img {
   display: block;
   min-width: 100%;
-  height: 200px;
+  height: 202px;
   margin-bottom: 16px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .list-products li .product-inf {
-  padding-left: 15px;
+  padding-left: 16px;
   font-weight: 600;
 }
 .list-products li .product-inf .product-name {
@@ -229,6 +231,7 @@ body {
   height: 80px;
   margin-top: 0;
   margin-bottom: 32px;
+  font-weight: 400;
   line-height: 20px;
 }
 .list-products li .product-inf .product-price {
@@ -243,8 +246,8 @@ body {
   top: -48px;
   right: 0;
   width: 122px;
-  height: 36px;
-  padding: 11px 27px 10px 16px;
+  height: 34px;
+  padding: 8px 0px 10px 13px;
   color: #b4b4b4;
   border: none;
   border-radius: 4px;
