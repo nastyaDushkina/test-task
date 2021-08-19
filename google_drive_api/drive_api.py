@@ -13,7 +13,6 @@ SCOPES = [
     'https://www.googleapis.com/auth/drive',
 ]
 
-FILE_ID = '0B2FJFuPO4g4wREVOeFl0X2ZLLXM'
 SRC_PATH = None
 DIST_PATH = None
 
@@ -80,17 +79,18 @@ def get_list_files(service: None, page_size: int = 30, param=None):
                 .execute()
         )
     # print(type(results))
+    list_files = results.get("files", [])
 
-    items = results.get("files", [])
-    # print(items)
-    # if not items:
-    #     print("Not found files")
-    # else:
-    #     print("Files:")
-    #     for item in items:
-    #         print(f'{item["name"]}  {item["id"]}   {item["mimeType"]}')
+    return list_files
 
-    return items
+
+def print_list_files(list_files: list):
+    if not list_files:
+        print("Not found files")
+    else:
+        print("Files:")
+        for item in list_files:
+            print(f'{item["name"]}  {item["id"]}   {item["mimeType"]}')
 
 
 def get_file(service, src_path, dist_path):
@@ -98,8 +98,8 @@ def get_file(service, src_path, dist_path):
     if '/' in src_path:
         folder_list = get_list_files(service=service, param="mimeType = 'application/vnd.google-apps.folder'")
         folder_id = None
+
         for folder in folder_list:
-            # print(f"{folder['name']} {src_path.split('/')[0]}")
             if folder['name'] == src_path.split('/')[0]:
                 folder_id = folder['id']
                 break
@@ -180,6 +180,7 @@ def main():
     SRC_PATH = args.src_path
     credentials = get_credentials()
     drive_service = build("drive", "v3", credentials=credentials)
+
     if method_download == 'get':
         get_file(service=drive_service, src_path=SRC_PATH, dist_path=DIST_PATH)
     elif method_download == 'put':
